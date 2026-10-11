@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fortunate Interio | Premium Interior Design</title>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: '#1A3C34',
+            forestDark: '#0F2A24',
+            sage: '#B8D4C8',
+            sand: '#F5EDE4',
+            terracotta: '#C97B5D',
+            clay: '#D9A796',
+            cream: '#FDFBF8',
+            charcoal: '#2E2E2E'
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #FDFBF8; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+    .premium-shadow {
+      box-shadow: 0 25px 50px -12px rgba(26, 60, 52, 0.1),
+                  0 12px 24px -8px rgba(0, 0, 0, 0.04);
+    }
+    .premium-shadow-hover:hover {
+      box-shadow: 0 30px 60px -15px rgba(26, 60, 52, 0.15);
+    }
+    html, body { overflow-x: hidden; }
+
+    .img-hover {
+      transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  box-shadow 0.7s ease;
+    }
+    .img-hover:hover {
+      transform: scale(1.03);
+      box-shadow: 0 30px 60px -15px rgba(26, 60, 52, 0.25);
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #FDFBF8; }
+    ::-webkit-scrollbar-thumb { background: #B8D4C8; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #1A3C34; }
+
+    .btn-lift { transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; }
+    .btn-lift:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -8px rgba(26, 60, 52, 0.3); }
+
+    @keyframes marq { to { transform: translateX(-50%); } }
+    .marq { animation: marq 30s linear infinite; }
+
+    /* ===== NAVBAR ===== */
+    #site-nav {
+      transition: background-color 0.4s ease,
+                  box-shadow 0.4s ease,
+                  border-color 0.4s ease,
+                  backdrop-filter 0.4s ease,
+                  padding 0.3s ease;
+      background-color: transparent;
+      border: 1px solid transparent;
+      box-shadow: none;
+    }
+    #site-nav .nav-link { color: rgba(255, 255, 255, 0.9); }
+    #site-nav .nav-link:hover { color: #C97B5D; }
+    #site-nav .logo-white { transition: opacity 0.3s ease; }
+    #site-nav .logo-dark  { transition: opacity 0.3s ease; }
+    #site-nav .burger-icon { color: #ffffff; }
+    #site-nav .burger-icon:hover { background-color: rgba(255, 255, 255, 0.12); }
+    #site-nav .nav-cta {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #1A3C34;
+      border: 1px solid rgba(255, 255, 255, 0.95);
+    }
+    #site-nav .nav-cta:hover { background-color: #C97B5D; color: #fff; border-color: #C97B5D; }
+
+    #site-nav.scrolled {
+      background-color: rgba(253, 251, 248, 0.92);
+      border-color: rgba(245, 237, 228, 0.7);
+      box-shadow: 0 8px 30px -12px rgba(26, 60, 52, 0.15);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    #site-nav.scrolled .nav-link { color: rgba(26, 60, 52, 0.75); }
+    #site-nav.scrolled .nav-link:hover { color: #C97B5D; }
+    #site-nav.scrolled .logo-white { opacity: 0; pointer-events: none; }
+    #site-nav.scrolled .logo-dark  { opacity: 1; }
+    #site-nav.scrolled .burger-icon { color: #1A3C34; }
+    #site-nav.scrolled .burger-icon:hover { background-color: rgba(245, 237, 228, 0.6); }
+    #site-nav.scrolled .nav-cta {
+      background-color: #1A3C34;
+      color: #ffffff;
+      border-color: #1A3C34;
+    }
+    #site-nav.scrolled .nav-cta:hover { background-color: #C97B5D; border-color: #C97B5D; }
+  </style>
+</head>
+<body class="text-charcoal antialiased overflow-x-hidden">
+
+<!-- ===== HEADER ===== -->
+<header class="fixed inset-x-0 top-0 z-50 px-3 sm:px-4 pt-3 sm:pt-4">
+  <nav id="site-nav"
+       class="mx-auto flex max-w-6xl items-center justify-between rounded-full px-4 py-3 sm:px-6 sm:py-4">
+
+    <a href="#top"
+       class="relative flex items-center shrink-0 h-12 w-40 sm:h-16 sm:w-56 md:h-[4.5rem] md:w-64 lg:w-72">
+      <img src="/images/fortunatelogo.png" alt="Fortunate Interio"
+           class="logo-dark absolute inset-0 h-full w-full object-contain object-left opacity-0" />
+      <img src="/images/fortunatelogo.png" alt=""
+           class="logo-white absolute inset-0 h-full w-full object-contain object-left"
+           style="filter: brightness(0) invert(1);" />
+    </a>
+
+    <div class="hidden items-center gap-5 lg:gap-7 text-sm font-medium md:flex">
+      <a href="/index.html" class="nav-link transition-colors duration-300">Home</a>
+      <a href="/aboutUs.html" class="nav-link transition-colors duration-300">About</a>
+      <a href="/services.html" class="nav-link transition-colors duration-300">Services</a>
+      <a href="/portfolio.html" class="nav-link transition-colors duration-300">Portfolio</a>
+      <a href="/process.html" class="nav-link transition-colors duration-300">Process</a>
+      <a href="/contact.html" class="nav-link transition-colors duration-300">Contact</a>
+    </div>
+
+    <a href="/contact.html"
+       class="nav-cta hidden shrink-0 rounded-full px-5 lg:px-6 py-3 text-sm font-semibold btn-lift transition-colors duration-300 md:inline-block">
+      Request a Quote
+    </a>
+
+    <button id="mobile-menu-btn"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            class="burger-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors duration-300 md:hidden">
+
+      <svg id="icon-open" xmlns="http://www.w3.org/2000/svg"
+           class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+           stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+
+      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg"
+           class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24"
+           stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </nav>
+
+  <div id="mobile-menu"
+       class="mx-auto mt-2 max-w-6xl overflow-hidden rounded-3xl bg-cream/95 shadow-lg shadow-forest/5 backdrop-blur-md border border-sand/50 transition-all duration-300 ease-out md:hidden max-h-0 opacity-0 invisible">
+
+    <div class="flex flex-col gap-1 px-4 py-4 text-sm font-medium text-forest/80">
+      <a href="/index.html" class="rounded-2xl px-4 py-3 transition-colors duration-300 hover:bg-sand/50 hover:text-terracotta">Home</a>
+      <a href="/aboutUs.html" class="rounded-2xl px-4 py-3 transition-colors duration-300 hover:bg-sand/50 hover:text-terracotta">About</a>
+      <a href="/services.html" class="rounded-2xl px-4 py-3 transition-colors duration-300 hover:bg-sand/50 hover:text-terracotta">Services</a>
+      <a href="/portfolio.html" class="rounded-2xl px-4 py-3 transition-colors duration-300 hover:bg-sand/50 hover:text-terracotta">Portfolio</a>
+      <a href="/process.html" class="rounded-2xl px-4 py-3 transition-colors duration-300 hover:bg-sand/50 hover:text-terracotta">Process</a>
+      <a href="/contact.html" class="rounded-2xl px-4 py-3 transition-colors duration-300 hover:bg-sand/50 hover:text-terracotta">Contact</a>
+      <a href="/contact.html"
+         class="mt-2 rounded-full bg-forest px-6 py-3 text-center text-sm font-semibold text-white transition-colors duration-300 hover:bg-terracotta">
+        Request a Quote
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  (function () {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+    let isOpen = false;
+    function openMenu() {
+      isOpen = true;
+      menu.classList.remove('max-h-0', 'opacity-0', 'invisible');
+      menu.classList.add('max-h-[500px]', 'opacity-100', 'visible');
+      iconOpen.classList.add('hidden'); iconClose.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      isOpen = false;
+      menu.classList.add('max-h-0', 'opacity-0', 'invisible');
+      menu.classList.remove('max-h-[500px]', 'opacity-100', 'visible');
+      iconOpen.classList.remove('hidden'); iconClose.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+    btn.addEventListener('click', () => isOpen ? closeMenu() : openMenu());
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', function () {
+      if (window.innerWidth >= 768 || !isOpen) return;
+      const currentScrollY = window.scrollY;
+      if (Math.abs(currentScrollY - lastScrollY) > 10) closeMenu();
+      lastScrollY = currentScrollY;
+    }, { passive: true });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 768 && isOpen) closeMenu();
+    });
+
+    const nav = document.getElementById('site-nav');
+    const SCROLL_THRESHOLD = 60;
+    function updateNav() {
+      if (window.scrollY > SCROLL_THRESHOLD) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }
+    updateNav();
+    window.addEventListener('scroll', updateNav, { passive: true });
+  })();
+</script>
+
+<main id="top">
+
+<!-- ===== PREMIUM HERO SLIDER ===== -->
+<section class="hero-slider" aria-label="Featured interior designs">
+
+  <style>
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 720px;
+      max-height: 1080px;
+      overflow: hidden;
+      background: #0F2A24;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+    }
+    .hero-slider * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    .hero-slider .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.4s cubic-bezier(0.45, 0, 0.15, 1), visibility 1.4s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-slider .hero-slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+      pointer-events: auto;
+    }
+    .hero-slider .hero-slide img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.06);
+      transition: transform 8s cubic-bezier(0.25, 0.5, 0.35, 1);
+      will-change: transform;
+    }
+    .hero-slider .hero-slide.active img { transform: scale(1); }
+
+    .hero-slider .hero-slide::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(10, 18, 16, 0.85) 0%,
+        rgba(10, 18, 16, 0.65) 35%,
+        rgba(10, 18, 16, 0.3) 65%,
+        rgba(10, 18, 16, 0.4) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-slider .hero-slide-content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 12vh 6vw 10vh 6vw;
+    }
+    .hero-slider .slide-inner {
+      max-width: 580px;
+      width: 100%;
+      text-align: left;
+      transform: translateY(28px);
+      opacity: 0;
+      transition: transform 1s ease 0.25s, opacity 1s ease 0.25s;
+    }
+    .hero-slider .hero-slide.active .slide-inner {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .hero-slider .hero-slide-label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 20px;
+    }
+    .hero-slider h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 4.6rem);
+      font-weight: 400;
+      line-height: 1.06;
+      letter-spacing: -0.015em;
+      color: #fff;
+      margin-bottom: 22px;
+    }
+    .hero-slider h1 em {
+      font-style: italic;
+      color: #c99a76;
+      font-weight: 400;
+    }
+    .hero-slider .hero-slide p {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.9rem, 1.1vw, 1rem);
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 440px;
+      margin-bottom: 34px;
+    }
+
+    .hero-slider .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+    .hero-slider .btn-hero-primary,
+    .hero-slider .btn-hero-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 28px;
+      transition: all 0.35s ease;
+    }
+    .hero-slider .btn-hero-primary {
+      background-color: #ffffff;
+      color: #111;
+      border: 1px solid #ffffff;
+    }
+    .hero-slider .btn-hero-primary:hover {
+      background-color: transparent;
+      color: #fff;
+    }
+    .hero-slider .btn-hero-outline {
+      background-color: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+    .hero-slider .btn-hero-outline:hover {
+      background-color: #ffffff;
+      color: #111;
+      border-color: #ffffff;
+    }
+
+    /* ===== RIGHT SIDE INFOBAR TABLE STYLING ===== */
+    .hero-slider .hero-right-wrap {
+      position: absolute;
+      right: 5vw;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 36px;
+      pointer-events: none;
+    }
+
+    .hero-slider .hero-info-table {
+      border-collapse: collapse;
+      border: none;
+    }
+    .hero-slider .hero-info-table td {
+      padding: 10px 0 10px 20px;
+      vertical-align: baseline;
+      text-align: right;
+    }
+    .hero-slider .hero-info-table tr:first-child td { padding-top: 0; }
+    .hero-slider .hero-info-table tr:last-child td { padding-bottom: 0; }
+
+    .hero-slider .info-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+      white-space: nowrap;
+      line-height: 1.6;
+    }
+    .hero-slider .info-value {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .hero-slider .scroll-indicator {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: flex-end;
+    }
+    .hero-slider .scroll-indicator .text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+      white-space: nowrap;
+    }
+    .hero-slider .scroll-indicator .line {
+      display: block;
+      width: 60px;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-slider .scroll-indicator .line::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 30%;
+      height: 100%;
+      background-color: #fff;
+      animation: heroScrollLine 2.4s infinite ease-in-out;
+    }
+    @keyframes heroScrollLine {
+      0% { transform: translateX(-100%); }
+      50% { transform: translateX(0); }
+      100% { transform: translateX(300%); }
+    }
+
+    .hero-slider .hero-dots {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      pointer-events: auto;
+    }
+    .hero-slider .hero-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.4);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.4s cubic-bezier(0.45, 0, 0.15, 1);
+    }
+    .hero-slider .hero-dot.active {
+      background-color: #c99a76;
+      width: 22px;
+      border-radius: 999px;
+      box-shadow: 0 0 12px rgba(201, 154, 118, 0.7);
+    }
+    .hero-slider .hero-dot:hover { background-color: rgba(255, 255, 255, 0.9); }
+    .hero-slider .hero-dot.active:hover { background-color: #c99a76; }
+
+    /* ===== RESPONSIVE MEDIA QUERIES ===== */
+    @media (max-width: 1024px) {
+      .hero-slider .hero-right-wrap { gap: 24px; }
+      .hero-slider .hero-info-table td { padding: 8px 0 8px 16px; }
+      .hero-slider .info-value { font-size: 1.1rem; }
+      .hero-slider .info-label { font-size: 0.6rem; letter-spacing: 0.24em; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-slider { height: 100svh; min-height: 640px; max-height: 850px; }
+      .hero-slider .hero-slide-content {
+        padding: 16vh 5vw 22vh 5vw;
+        align-items: center;
+      }
+      .hero-slider .slide-inner { max-width: 100%; }
+      .hero-slider h1 { font-size: clamp(2rem, 7.5vw, 2.8rem); line-height: 1.1; margin-bottom: 16px; }
+      .hero-slider .hero-slide p { max-width: 100%; font-size: 0.88rem; margin-bottom: 24px; line-height: 1.6; }
+      .hero-slider .hero-slide-label { font-size: 0.58rem; letter-spacing: 0.24em; margin-bottom: 14px; }
+      .hero-slider .hero-actions { flex-direction: column; width: 100%; gap: 10px; }
+      .hero-slider .btn-hero-primary,
+      .hero-slider .btn-hero-outline {
+        width: 100%;
+        padding: 14px 20px;
+      }
+      .hero-slider .hero-right-wrap {
+        right: 5vw;
+        top: auto;
+        bottom: 50px;
+        transform: none;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .hero-slider .hero-info-table td { padding: 4px 12px 4px 0; text-align: left; }
+      .hero-slider .hero-info-table { display: flex; }
+      .hero-slider .hero-info-table tbody { display: flex; gap: 16px; }
+      .hero-slider .hero-info-table tr { display: flex; flex-direction: column; }
+      .hero-slider .info-value { font-size: 0.9rem; text-align: left; }
+      .hero-slider .info-label { font-size: 0.5rem; letter-spacing: 0.18em; text-align: left; }
+      .hero-slider .scroll-indicator { display: none; }
+      .hero-slider .hero-dots { bottom: 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-slider .hero-right-wrap { bottom: 48px; }
+      .hero-slider .hero-info-table tbody { gap: 12px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-slider .hero-slide,
+      .hero-slider .hero-slide img,
+      .hero-slider .slide-inner {
+        transition-duration: 0.001ms !important;
+        animation-duration: 0.001ms !important;
+      }
+      .hero-slider .hero-slide.active img { transform: scale(1); }
+    }
+  </style>
+
+  <div class="hero-slide active" data-index="0">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=85" alt="Luxury kitchen with warm textures" />
+    <div class="hero-slide-content">
+      <div class="slide-inner">
+        <span class="hero-slide-label">Rishi Home Interior</span>
+        <h1>Spaces that feel<br>like <em>home.</em></h1>
+        <p>Thoughtfully designed interiors that balance beauty, functionality and the way you live.</p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn-hero-primary">Explore Designs &rarr;</a>
+          <a href="#contact" class="btn-hero-outline">Book a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-slide" data-index="1">
+    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&q=85" alt="Luxury living room with elegant modern interiors" />
+    <div class="hero-slide-content">
+      <div class="slide-inner">
+        <span class="hero-slide-label">Bespoke Craftsmanship</span>
+        <h1>Where every detail<br>tells <em>your story.</em></h1>
+        <p>From modular kitchens to bespoke wardrobes, we craft interiors that feel personal, timeless and effortlessly elegant.</p>
+        <div class="hero-actions">
+          <a href="#collection" class="btn-hero-primary">Explore Collection &rarr;</a>
+          <a href="#about" class="btn-hero-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-slide" data-index="2">
+    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=85" alt="Contemporary bedroom interior with warm textures" />
+    <div class="hero-slide-content">
+      <div class="slide-inner">
+        <span class="hero-slide-label">Timeless Elegance</span>
+        <h1>Designs that<br>inspire <em>living.</em></h1>
+        <p>Elegant, functional spaces designed around you. Experience interiors that elevate everyday moments into something extraordinary.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-hero-primary">Start Your Project &rarr;</a>
+          <a href="#portfolio" class="btn-hero-outline">View Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right-wrap">
+    <table class="hero-info-table" role="presentation">
+      <tbody>
+        <tr>
+          <td class="info-label">Based In</td>
+          <td class="info-value">Delhi NCR</td>
+        </tr>
+        <tr>
+          <td class="info-label">Spaces Designed</td>
+          <td class="info-value">100+</td>
+        </tr>
+        <tr>
+          <td class="info-label">Studio Since</td>
+          <td class="info-value">2018</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="scroll-indicator">
+      <span class="text">Scroll to Explore</span>
+      <span class="line"></span>
+    </div>
+  </div>
+
+  <div class="hero-dots" role="tablist" aria-label="Slide navigation">
+    <button class="hero-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+    <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+    <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+  </div>
+
+</section>
+
+<!-- ===== GAP BETWEEN HERO AND MARQUEE ===== -->
+<div class="h-10 sm:h-16 md:h-20 bg-cream" aria-hidden="true"></div>
+
+<!-- ===== MARQUEE ===== -->
+<div class="overflow-hidden bg-forest py-3 sm:py-5 text-sand" aria-hidden="true">
+  <div class="marq flex w-max gap-6 sm:gap-12 md:gap-14 whitespace-nowrap font-display text-base sm:text-xl md:text-2xl font-bold">
+    <span>Better Space Utilization</span><span class="text-terracotta">✦</span>
+    <span>More Comfort</span><span class="text-terracotta">✦</span>
+    <span>Increased Property Value</span><span class="text-terracotta">✦</span>
+    <span>Positive Vibe</span><span class="text-terracotta">✦</span>
+    <span>Better Space Utilization</span><span class="text-terracotta">✦</span>
+    <span>More Comfort</span><span class="text-terracotta">✦</span>
+    <span>Increased Property Value</span><span class="text-terracotta">✦</span>
+    <span>Positive Vibe</span><span class="text-terracotta">✦</span>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="px-4 sm:px-5 py-16 sm:py-24 md:py-28">
+  <div class="mx-auto grid max-w-6xl items-center gap-10 sm:gap-16 md:grid-cols-2">
+    <div class="relative grid grid-cols-2 gap-3 sm:gap-5" data-aos="fade-right" data-aos-duration="1000">
+      <div class="h-44 sm:h-72 md:h-80 rounded-[1.25rem] sm:rounded-[2rem] overflow-hidden premium-shadow img-hover">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80" alt="Modern living room design" class="w-full h-full object-cover">
+      </div>
+      <div class="mt-6 sm:mt-12 h-44 sm:h-72 md:h-80 rounded-[1.25rem] sm:rounded-[2rem] overflow-hidden premium-shadow img-hover">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Contemporary interior decor" class="w-full h-full object-cover">
+      </div>
+      <div class="absolute -bottom-3 -left-3 h-14 w-14 sm:h-24 sm:w-24 rounded-full bg-sand/60 -z-10"></div>
+    </div>
+
+    <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="150" class="text-center md:text-left">
+      <span class="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-terracotta">About Us</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mt-3 sm:mt-4 text-forest">
+        Why Interiors Matter
+      </h2>
+      <p class="mt-4 sm:mt-6 text-sm sm:text-lg text-forest/65 leading-relaxed">
+        Your home isn't just a place. It's a reflection of your style, your comfort and your story. We bring your vision to life with design that blends elegance, functionality and creativity.
+      </p>
+
+      <ul class="mt-6 sm:mt-9 grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2">
+        <li class="flex items-center gap-3 rounded-2xl bg-white p-3.5 sm:p-5 premium-shadow border border-sand/50 text-left" data-aos="fade-up" data-aos-delay="200">
+          <span class="grid h-9 w-9 sm:h-11 sm:w-11 shrink-0 place-items-center rounded-full bg-sage/60 text-forest text-base sm:text-lg">◧</span>
+          <span class="font-medium text-forest text-xs sm:text-base">Better Space Utilization</span>
+        </li>
+        <li class="flex items-center gap-3 rounded-2xl bg-white p-3.5 sm:p-5 premium-shadow border border-sand/50 text-left" data-aos="fade-up" data-aos-delay="280">
+          <span class="grid h-9 w-9 sm:h-11 sm:w-11 shrink-0 place-items-center rounded-full bg-sage/60 text-forest text-base sm:text-lg">☾</span>
+          <span class="font-medium text-forest text-xs sm:text-base">More Comfort</span>
+        </li>
+        <li class="flex items-center gap-3 rounded-2xl bg-white p-3.5 sm:p-5 premium-shadow border border-sand/50 text-left" data-aos="fade-up" data-aos-delay="360">
+          <span class="grid h-9 w-9 sm:h-11 sm:w-11 shrink-0 place-items-center rounded-full bg-sage/60 text-forest text-base sm:text-lg">△</span>
+          <span class="font-medium text-forest text-xs sm:text-base">Increased Property Value</span>
+        </li>
+        <li class="flex items-center gap-3 rounded-2xl bg-white p-3.5 sm:p-5 premium-shadow border border-sand/50 text-left" data-aos="fade-up" data-aos-delay="440">
+          <span class="grid h-9 w-9 sm:h-11 sm:w-11 shrink-0 place-items-center rounded-full bg-sage/60 text-forest text-base sm:text-lg">☀</span>
+          <span class="font-medium text-forest text-xs sm:text-base">Positive Vibe</span>
+        </li>
+      </ul>
+
+      <p class="mt-5 sm:mt-8 text-sm sm:text-base text-forest/65 leading-relaxed">
+        Whether you're redesigning a single room or creating your dream home from scratch, we make every corner beautiful and meaningful.
+      </p>
+
+      <div class="mt-6 sm:mt-9 flex flex-col sm:flex-row flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-8">
+        <a href="#contact" class="rounded-full bg-forest px-6 py-3.5 sm:px-8 sm:py-4 font-semibold text-white btn-lift hover:bg-terracotta text-sm sm:text-base w-full sm:w-auto text-center">
+          Request a Quote
+        </a>
+        <div class="text-center sm:text-left">
+          <p class="font-display text-lg sm:text-2xl font-bold text-forest">
+            <a href="tel:09892915315" class="hover:text-terracotta transition">09892915315</a>
+          </p>
+          <p class="text-xs sm:text-sm text-forest/60">Mumbai Office</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE BANNER ===== -->
+<section class="px-4 sm:px-5 py-12 sm:py-20 bg-sand/40">
+  <div class="mx-auto max-w-6xl">
+    <div class="grid md:grid-cols-3 gap-6 sm:gap-10 items-center" data-aos="fade-up" data-aos-duration="1000">
+      <div class="md:col-span-2 text-center md:text-left">
+        <h2 class="font-display text-xl sm:text-3xl md:text-4xl font-bold leading-tight text-forest">
+          Through a unique combination of engineering, construction and design disciplines and expertise.
+        </h2>
+      </div>
+      <div class="flex items-center justify-center md:justify-start gap-4 sm:gap-5">
+        <div class="bg-forest text-white rounded-2xl px-5 py-3.5 sm:px-7 sm:py-5 text-center premium-shadow shrink-0">
+          <span class="block font-display text-2xl sm:text-4xl font-bold">15</span>
+          <span class="text-[10px] sm:text-xs font-medium uppercase tracking-wider text-sage">Years</span>
+        </div>
+        <div>
+          <p class="font-semibold text-forest text-sm sm:text-base">Experience</p>
+          <p class="text-xs sm:text-sm text-forest/60 mt-1">Delivering excellence since 2010</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COLLECTION (Read More removed) ===== -->
+<section id="collection" class="px-4 sm:px-5 py-16 sm:py-24 md:py-28 bg-white">
+  <div class="mx-auto max-w-6xl">
+    <div class="text-center max-w-2xl mx-auto" data-aos="fade-up">
+      <span class="inline-block text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-terracotta">What We Offer</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4 text-forest">Our Collection</h2>
+      <p class="mt-3 sm:mt-5 text-sm sm:text-base text-forest/60">Curated interior solutions designed to elevate every corner of your home.</p>
+    </div>
+
+    <div class="mt-10 sm:mt-14 md:mt-16 grid gap-5 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+
+      <article class="flex flex-col h-full rounded-[1.5rem] sm:rounded-[2rem] bg-cream p-6 sm:p-8 border border-sand/60 premium-shadow premium-shadow-hover transition-all duration-500 hover:-translate-y-2 text-center sm:text-left" data-aos="fade-right" data-aos-delay="100">
+        <div class="mb-5 sm:mb-8 mx-auto sm:mx-0 grid h-14 w-14 sm:h-16 sm:w-16 shrink-0 place-items-center rounded-2xl bg-forest text-xl sm:text-2xl text-sand">✎</div>
+        <h3 class="font-display text-lg sm:text-xl font-bold text-forest">Customized Interior Solutions</h3>
+        <p class="mt-2.5 sm:mt-3 text-sm sm:text-base text-forest/65 leading-relaxed flex-1">Layouts, furniture and finishes made around how you live and what you need.</p>
+      </article>
+
+      <article class="flex flex-col h-full rounded-[1.5rem] sm:rounded-[2rem] bg-cream p-6 sm:p-8 border border-sand/60 premium-shadow premium-shadow-hover transition-all duration-500 hover:-translate-y-2 text-center sm:text-left" data-aos="fade-right" data-aos-delay="200">
+        <div class="mb-5 sm:mb-8 mx-auto sm:mx-0 grid h-14 w-14 sm:h-16 sm:w-16 shrink-0 place-items-center rounded-2xl bg-terracotta text-xl sm:text-2xl text-white">◐</div>
+        <h3 class="font-display text-lg sm:text-xl font-bold text-forest">Modern & Timeless Designs</h3>
+        <p class="mt-2.5 sm:mt-3 text-sm sm:text-base text-forest/65 leading-relaxed flex-1">Clean, current styling that still feels right years from now.</p>
+      </article>
+
+      <article class="flex flex-col h-full rounded-[1.5rem] sm:rounded-[2rem] bg-cream p-6 sm:p-8 border border-sand/60 premium-shadow premium-shadow-hover transition-all duration-500 hover:-translate-y-2 text-center sm:text-left" data-aos="fade-right" data-aos-delay="300">
+        <div class="mb-5 sm:mb-8 mx-auto sm:mx-0 grid h-14 w-14 sm:h-16 sm:w-16 shrink-0 place-items-center rounded-2xl bg-clay text-xl sm:text-2xl text-white">✓</div>
+        <h3 class="font-display text-lg sm:text-xl font-bold text-forest">Quality Craftsmanship</h3>
+        <p class="mt-2.5 sm:mt-3 text-sm sm:text-base text-forest/65 leading-relaxed flex-1">Skilled workers and careful execution, down to the smallest joint.</p>
+      </article>
+
+      <article class="flex flex-col h-full rounded-[1.5rem] sm:rounded-[2rem] bg-cream p-6 sm:p-8 border border-sand/60 premium-shadow premium-shadow-hover transition-all duration-500 hover:-translate-y-2 text-center sm:text-left" data-aos="fade-right" data-aos-delay="400">
+        <div class="mb-5 sm:mb-8 mx-auto sm:mx-0 grid h-14 w-14 sm:h-16 sm:w-16 shrink-0 place-items-center rounded-2xl bg-sage text-xl sm:text-2xl text-forest">▦</div>
+        <h3 class="font-display text-lg sm:text-xl font-bold text-forest">Smart Space Planning</h3>
+        <p class="mt-2.5 sm:mt-3 text-sm sm:text-base text-forest/65 leading-relaxed flex-1">Every square foot planned to work harder for you.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="bg-forest px-4 sm:px-5 py-14 sm:py-20 md:py-24 text-white relative overflow-hidden">
+  <div class="absolute -top-20 -right-20 h-60 w-60 sm:h-80 sm:w-80 rounded-full bg-terracotta/10 blur-3xl"></div>
+  <div class="absolute -bottom-20 -left-20 h-60 w-60 sm:h-80 sm:w-80 rounded-full bg-sage/10 blur-3xl"></div>
+  <div class="mx-auto grid max-w-6xl gap-8 sm:gap-12 grid-cols-2 lg:grid-cols-4 relative">
+    <div data-aos="fade-up" data-aos-delay="100">
+      <p class="font-display text-3xl sm:text-5xl md:text-6xl font-bold text-sand"><span data-n="9632">0</span></p>
+      <p class="mt-1.5 sm:mt-3 text-xs sm:text-base text-sage font-medium">Happy Clients</p>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="200">
+      <p class="font-display text-3xl sm:text-5xl md:text-6xl font-bold text-sand"><span data-n="78">0</span></p>
+      <p class="mt-1.5 sm:mt-3 text-xs sm:text-base text-sage font-medium">Qualified Workers</p>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="300">
+      <p class="font-display text-3xl sm:text-5xl md:text-6xl font-bold text-sand"><span data-n="864">0</span></p>
+      <p class="mt-1.5 sm:mt-3 text-xs sm:text-base text-sage font-medium">Modular Kitchens</p>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="400">
+      <p class="font-display text-3xl sm:text-5xl md:text-6xl font-bold text-sand"><span data-n="473">0</span></p>
+      <p class="mt-1.5 sm:mt-3 text-xs sm:text-base text-sage font-medium">Local Partners</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PORTFOLIO (HOME PAGE PREVIEW SLIDER — INFINITE LOOP, NO WHITE SPACE) ===== -->
+<section id="portfolio" class="px-4 sm:px-5 py-16 sm:py-20 md:py-24 overflow-hidden bg-forest/5">
+  <div class="mx-auto max-w-6xl">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8 sm:mb-10" data-aos="fade-up">
+      <div class="text-center md:text-left max-w-2xl">
+        <span class="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-terracotta">Our Work</span>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4 text-forest">Explore Portfolios</h2>
+        <p class="mt-3 sm:mt-4 text-sm sm:text-base text-forest/60">A glimpse into the spaces we've transformed with elegance and precision.</p>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <button id="pfPrev" aria-label="Previous projects"
+          class="h-11 w-11 rounded-full border border-forest/15 text-forest flex items-center justify-center hover:bg-forest hover:text-white hover:border-forest transition-all duration-300 shadow-sm">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button id="pfNext" aria-label="Next projects"
+          class="h-11 w-11 rounded-full border border-forest/15 text-forest flex items-center justify-center hover:bg-forest hover:text-white hover:border-forest transition-all duration-300 shadow-sm">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="pfViewport" class="relative -mx-4 sm:-mx-5 px-4 sm:px-5 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+      <div id="pfTrack" class="flex gap-4 sm:gap-5 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform"></div>
+    </div>
+
+    <div class="flex md:hidden items-center justify-center gap-3 mt-6">
+      <button id="pfPrevM" aria-label="Previous projects"
+        class="h-10 w-10 rounded-full border border-forest/15 text-forest flex items-center justify-center hover:bg-forest hover:text-white transition-all duration-300">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div id="pfDots" class="flex gap-2"></div>
+      <button id="pfNextM" aria-label="Next projects"
+        class="h-10 w-10 rounded-full border border-forest/15 text-forest flex items-center justify-center hover:bg-forest hover:text-white transition-all duration-300">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <div id="pfDotsDesktop" class="hidden md:flex justify-center gap-2 mt-8"></div>
+
+    <div class="mt-8 sm:mt-10 text-center" data-aos="fade-up" data-aos-delay="200">
+      <a href="portfolio.html"
+         class="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 font-semibold text-white btn-lift hover:bg-terracotta text-sm sm:text-base transition-colors duration-300 shadow-md">
+        View Full Portfolio
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pf-tile { flex: 0 0 82%; }
+  @media (min-width: 640px) { .pf-tile { flex: 0 0 calc((100% - 1rem) / 2); } }
+  @media (min-width: 1024px) { .pf-tile { flex: 0 0 calc((100% - 2.5rem) / 3); } }
+
+  .pf-dot {
+    width: 8px; height: 8px; border-radius: 999px;
+    background: rgba(26, 60, 52, 0.2);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    border: none; padding: 0; cursor: pointer;
+  }
+  .pf-dot.active {
+    width: 28px; background: #C97B5D;
+    box-shadow: 0 0 12px rgba(201, 123, 93, 0.5);
+  }
+</style>
+
+<script>
+  (function () {
+    var projects = [
+      { name: 'Luxury Modular Kitchen · Andheri',     img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85' },
+      { name: 'Serene Master Bedroom · Jogeshwari',   img: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=85' },
+      { name: 'Contemporary Living Room · Bandra',    img: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85' },
+      { name: 'Minimalist L-Shaped Kitchen · Powai',  img: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85' },
+      { name: 'Vibrant Kids Bedroom · Kandivali',     img: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85' },
+      { name: 'Open Living & Dining · Malad',         img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85' },
+      { name: 'Chef Island Kitchen · Khar',           img: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=85' },
+      { name: 'Cozy Guest Bedroom · Versova',         img: '/images/guest_interio.jpg' },
+      { name: 'Modern Penthouse Lounge · Lower Parel',img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85' },
+      { name: 'Designer Living Suite · Juhu',         img: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=85' }
+    ];
+
+    var track = document.getElementById('pfTrack');
+    var viewport = document.getElementById('pfViewport');
+    if (!track || !viewport) return;
+
+    var prevBtn = document.getElementById('pfPrev');
+    var nextBtn = document.getElementById('pfNext');
+    var prevM = document.getElementById('pfPrevM');
+    var nextM = document.getElementById('pfNextM');
+    var dotsM = document.getElementById('pfDots');
+    var dotsD = document.getElementById('pfDotsDesktop');
+
+    var current = 0;
+    var realPageCount = 1;
+    var per = 1;
+    var timer = null;
+    var INTERVAL = 4000;
+    var paused = false;
+    var animating = false;
+    var TRANSITION_MS = 700;
+
+    function perPage() {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 640) return 2;
+      return 1;
+    }
+
+    function makeTile(p) {
+      var a = document.createElement('a');
+      a.href = 'portfolio.html';
+      a.className = 'pf-tile group relative block overflow-hidden rounded-[1.25rem] sm:rounded-[1.5rem] shadow-lg aspect-[4/5] bg-forest/10';
+      a.innerHTML =
+        '<img src="' + p.img + '" alt="' + p.name + ' — Fortunate Interio Mumbai" ' +
+        'class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">';
+      return a;
+    }
+
+    function buildTrack() {
+      per = perPage();
+      track.innerHTML = '';
+      projects.forEach(function (p) { track.appendChild(makeTile(p)); });
+      realPageCount = Math.max(1, Math.ceil(projects.length / per));
+    }
+
+    function stepSize() {
+      var tile = track.querySelector('.pf-tile');
+      if (!tile) return 0;
+      var gap = parseFloat(getComputedStyle(track).gap) || 0;
+      return (tile.offsetWidth + gap) * per;
+    }
+
+    function setPosition(realIndex, animate) {
+      var step = stepSize();
+      track.style.transition = animate
+        ? 'transform ' + TRANSITION_MS + 'ms cubic-bezier(0.22, 1, 0.36, 1)'
+        : 'none';
+      track.style.transform = 'translateX(-' + (realIndex * step) + 'px)';
+      current = realIndex;
+      updateDots();
+    }
+
+    function goNext() {
+      if (animating) return;
+      animating = true;
+      var next = current + 1;
+
+      if (next >= realPageCount) {
+        setPosition(0, false);
+        void track.offsetWidth;
+        animating = false;
+      } else {
+        setPosition(next, true);
+        setTimeout(function () { animating = false; }, TRANSITION_MS + 20);
+      }
+    }
+
+    function goPrev() {
+      if (animating) return;
+      animating = true;
+      var prev = current - 1;
+
+      if (prev < 0) {
+        setPosition(realPageCount - 1, false);
+        void track.offsetWidth;
+        animating = false;
+      } else {
+        setPosition(prev, true);
+        setTimeout(function () { animating = false; }, TRANSITION_MS + 20);
+      }
+    }
+
+    function buildDots() {
+      var html = '';
+      for (var i = 0; i < realPageCount; i++) {
+        html += '<button class="pf-dot" data-i="' + i + '" aria-label="Go to slide ' + (i + 1) + '"></button>';
+      }
+      if (dotsM) dotsM.innerHTML = html;
+      if (dotsD) dotsD.innerHTML = html;
+      attachDotListeners();
+      updateDots();
+    }
+
+    function attachDotListeners() {
+      document.querySelectorAll('.pf-dot').forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          if (animating) return;
+          setPosition(+this.dataset.i, true);
+          restart();
+        });
+      });
+    }
+
+    function updateDots() {
+      document.querySelectorAll('.pf-dot').forEach(function (dot) {
+        dot.classList.toggle('active', +dot.dataset.i === current);
+      });
+    }
+
+    function play() { stop(); if (paused) return; timer = setInterval(goNext, INTERVAL); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function restart() { stop(); play(); }
+
+    if (nextBtn) nextBtn.addEventListener('click', function () { goNext(); restart(); });
+    if (prevBtn) prevBtn.addEventListener('click', function () { goPrev(); restart(); });
+    if (nextM) nextM.addEventListener('click', function () { goNext(); restart(); });
+    if (prevM) prevM.addEventListener('click', function () { goPrev(); restart(); });
+
+    viewport.addEventListener('mouseenter', function () { paused = true; stop(); });
+    viewport.addEventListener('mouseleave', function () { paused = false; play(); });
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else play();
+    });
+
+    var startX = 0;
+    viewport.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    viewport.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 45) { dx < 0 ? goNext() : goPrev(); restart(); }
+    });
+
+    var rt = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(rt);
+      rt = setTimeout(function () {
+        buildTrack();
+        buildDots();
+        setPosition(0, false);
+      }, 150);
+    });
+
+    buildTrack();
+    buildDots();
+    requestAnimationFrame(function () {
+      setPosition(0, false);
+      play();
+    });
+
+    if (window.AOS && typeof window.AOS.refresh === 'function') window.AOS.refresh();
+  })();
+</script>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="px-4 sm:px-5 pb-16 sm:pb-24 md:pb-28">
+  <div class="mx-auto grid max-w-6xl gap-8 sm:gap-10 md:gap-12 rounded-[1.5rem] sm:rounded-[2.5rem] md:rounded-[3rem] bg-gradient-to-br from-forest to-[#2D5A4E] p-5 sm:p-10 md:p-16 premium-shadow md:grid-cols-2" data-aos="fade-up">
+    <div class="text-white text-center md:text-left">
+      <span class="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-terracotta">Get In Touch</span>
+      <h2 class="font-display text-2xl sm:text-4xl md:text-5xl font-bold leading-tight mt-3 sm:mt-4">
+        Let's Create Something Beautiful
+      </h2>
+      <p class="mt-3 sm:mt-6 mx-auto md:mx-0 max-w-sm text-sm sm:text-base text-sage leading-relaxed">
+        Tell us about your space and we'll get back to you with ideas and a quote.
+      </p>
+      <address class="mt-6 sm:mt-10 space-y-3.5 sm:space-y-4 not-italic text-sage text-sm sm:text-base text-left">
+        <p class="flex items-start gap-3">
+          <svg class="w-5 h-5 mt-0.5 text-terracotta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Office 32, 33, Swami Vivekanand Rd, Momin Nagar, Jogeshwari West, Mumbai, Maharashtra 400102</span>
+        </p>
+        <p class="flex items-center gap-3">
+          <svg class="w-5 h-5 text-terracotta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <a class="underline hover:text-white transition break-all" href="mailto:shabbir15887@gmail.com">shabbir15887@gmail.com</a>
+        </p>
+        <p class="flex items-center gap-3">
+          <svg class="w-5 h-5 text-terracotta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <a class="underline hover:text-white transition" href="tel:09892915315">09892915315</a>
+        </p>
+        <p class="pt-1 text-xs sm:text-sm text-sage/80">Office hours: Monday to Saturday, 9:00 am to 7:00 pm</p>
+      </address>
+    </div>
+
+    <div class="rounded-[1.5rem] sm:rounded-[2rem] bg-cream p-5 sm:p-8 md:p-10">
+      <label class="block text-sm font-semibold text-forest mb-1.5" for="n">Name</label>
+      <input id="n" class="mb-4 sm:mb-5 w-full rounded-xl border border-sand bg-white px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition" placeholder="Your name">
+
+      <label class="block text-sm font-semibold text-forest mb-1.5" for="e">Email</label>
+      <input id="e" type="email" class="mb-4 sm:mb-5 w-full rounded-xl border border-sand bg-white px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition" placeholder="you@example.com">
+
+      <label class="block text-sm font-semibold text-forest mb-1.5" for="m">About Your Space</label>
+      <textarea id="m" rows="4" class="mb-5 sm:mb-6 w-full rounded-xl border border-sand bg-white px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition" placeholder="Tell us what you have in mind"></textarea>
+
+      <button id="send" type="button" class="w-full rounded-full bg-forest py-3.5 sm:py-4 font-semibold text-white btn-lift hover:bg-terracotta text-sm sm:text-base">
+        Send Message
+      </button>
+      <p id="ok" class="mt-4 hidden text-center text-sm font-semibold text-terracotta" role="status">Thanks! We'll be in touch soon.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-forestDark px-4 sm:px-5 pt-14 pb-8 text-sage">
+  <div class="mx-auto max-w-6xl">
+
+    <div class="grid md:grid-cols-12 gap-10 pb-10 border-b border-white/8">
+
+      <div class="md:col-span-5" data-aos="fade-up">
+        <p class="font-display text-2xl font-bold text-sand">Fortunate Interio</p>
+        <p class="mt-4 text-sm text-sage/75 leading-relaxed max-w-sm">
+          Premium interior design studio in Jogeshwari West, Mumbai. Modular kitchens,
+          bespoke wardrobes, and full home interiors — designed, built, and installed in-house.
+        </p>
+        <div class="flex items-center gap-3 mt-6">
+          <a href="https://wa.me/919892915315" target="_blank" rel="noopener" aria-label="WhatsApp"
+             class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-sage hover:bg-terracotta hover:text-white hover:border-terracotta transition-all duration-300">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.87 11.87 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.18-1.62A11.87 11.87 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.21-3.48-8.52zM12 22a9.94 9.94 0 01-5.06-1.38l-.36-.21-3.67.96.98-3.58-.23-.37A9.94 9.94 0 012 12c0-5.51 4.49-10 10-10 2.67 0 5.18 1.04 7.07 2.93A9.94 9.94 0 0122 12c0 5.51-4.49 10-10 10zm5.5-7.5c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15s-.78.98-.96 1.18c-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.63-.93-2.23-.24-.58-.5-.5-.68-.51-.18-.01-.38-.01-.58-.01-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.13 3.25 5.16 4.55.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"
+             class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-sage hover:bg-terracotta hover:text-white hover:border-terracotta transition-all duration-300">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"
+             class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-sage hover:bg-terracotta hover:text-white hover:border-terracotta transition-all duration-300">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0022 12z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="80">
+        <h4 class="font-display text-sm font-bold text-sand uppercase tracking-wider mb-5">Explore</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="/index.html" class="hover:text-terracotta transition">Home</a></li>
+          <li><a href="/aboutUs.html" class="hover:text-terracotta transition">About</a></li>
+          <li><a href="/services.html" class="hover:text-terracotta transition">Services</a></li>
+          <li><a href="/portfolio.html" class="hover:text-terracotta transition">Portfolio</a></li>
+          <li><a href="/process.html" class="hover:text-terracotta transition">Process</a></li>
+          <li><a href="/contact.html" class="hover:text-terracotta transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="160">
+        <h4 class="font-display text-sm font-bold text-sand uppercase tracking-wider mb-5">Services</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="/collection.html" class="hover:text-terracotta transition">Modular Kitchens</a></li>
+          <li><a href="/collection.html" class="hover:text-terracotta transition">Wardrobes</a></li>
+          <li><a href="/collection.html" class="hover:text-terracotta transition">Bedrooms</a></li>
+          <li><a href="/collection.html" class="hover:text-terracotta transition">Living Rooms</a></li>
+          <li><a href="/collection.html" class="hover:text-terracotta transition">Full Home Interiors</a></li>
+          <li><a href="/collection.html" class="hover:text-terracotta transition">Custom Furniture</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3" data-aos="fade-up" data-aos-delay="240">
+        <h4 class="font-display text-sm font-bold text-sand uppercase tracking-wider mb-5">Reach Us</h4>
+        <ul class="space-y-4 text-sm">
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 mt-1 text-terracotta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span class="leading-relaxed text-sage/80">Office 32, 33, Swami Vivekanand Rd, Momin Nagar, Jogeshwari West, Mumbai 400102</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-4 h-4 text-terracotta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <a href="tel:09892915315" class="hover:text-terracotta transition">09892915315</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-4 h-4 text-terracotta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:shabbir15887@gmail.com" class="hover:text-terracotta transition break-all">shabbir15887@gmail.com</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 mt-1 text-terracotta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"/></svg>
+            <span class="leading-relaxed text-sage/80">Mon – Sat · 9:00 am – 7:00 pm</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 text-xs sm:text-sm text-sage/60">
+      <p>© 2026 Fortunate Interio. All rights reserved.</p>
+      <p>Designed with care in Mumbai · <a href="/contact.html" class="hover:text-terracotta transition">Request a Quote</a></p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  /* ===== Global init helpers (run early, safe to re-run) ===== */
+  function initAOS() {
+    if (window.AOS && !window.__aosInit) {
+      AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 80 });
+      window.__aosInit = true;
+    }
+  }
+
+  /* ===== HERO SLIDER — self-initialising ===== */
+  function initHeroSlider() {
+    var slider = document.querySelector('.hero-slider');
+    if (!slider || slider.dataset.initialized === 'true') return;
+
+    var slides = slider.querySelectorAll('.hero-slide');
+    var dots = slider.querySelectorAll('.hero-dot');
+    if (slides.length < 2) return;
+
+    slider.dataset.initialized = 'true';
+
+    var current = 0;
+    var total = slides.length;
+    var INTERVAL = 5500;
+    var timer = null;
+    var paused = false;
+
+    function goTo(index) {
+      if (index < 0) index = total - 1;
+      if (index >= total) index = 0;
+      if (index === current) return;
+      slides[current].classList.remove('active');
+      slides[index].classList.add('active');
+      if (dots[current]) { dots[current].classList.remove('active'); dots[current].setAttribute('aria-selected', 'false'); }
+      if (dots[index]) { dots[index].classList.add('active'); dots[index].setAttribute('aria-selected', 'true'); }
+      current = index;
+    }
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+    function play() { stop(); if (paused) return; timer = setInterval(next, INTERVAL); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function restart() { stop(); play(); }
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { goTo(i); restart(); });
+    });
+
+    slider.addEventListener('mouseenter', function () { paused = true; stop(); });
+    slider.addEventListener('mouseleave', function () { paused = false; play(); });
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else play();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { prev(); restart(); }
+      if (e.key === 'ArrowRight') { next(); restart(); }
+    });
+
+    var startX = 0;
+    slider.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    slider.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); restart(); }
+    });
+
+    slides.forEach(function (s, i) {
+      if (i === 0) s.classList.add('active'); else s.classList.remove('active');
+    });
+    if (dots[0]) dots[0].classList.add('active');
+
+    play();
+  }
+
+  /* ===== Counter animation ===== */
+  function initCounters() {
+    if (window.__countersInit) return;
+    window.__countersInit = true;
+    document.querySelectorAll('[data-n]').forEach(function (el) { el.textContent = '0'; });
+    var co = new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        co.unobserve(e.target);
+        var n = +e.target.dataset.n;
+        var s = performance.now();
+        (function f(t) {
+          var p = Math.min((t - s) / 1600, 1);
+          e.target.textContent = Math.round(n * (1 - Math.pow(1 - p, 3))).toLocaleString('en-IN');
+          if (p < 1) requestAnimationFrame(f);
+        })(s);
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('[data-n]').forEach(function(el) { co.observe(el); });
+  }
+
+  /* ===== Contact form ===== */
+  function initContactForm() {
+    var send = document.getElementById('send');
+    var ok = document.getElementById('ok');
+    if (send && ok && !send.dataset.bound) {
+      send.dataset.bound = 'true';
+      send.addEventListener('click', function () {
+        ok.classList.remove('hidden');
+      });
+    }
+  }
+
+  function bootAll() {
+    initAOS();
+    initHeroSlider();
+    initCounters();
+    initContactForm();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bootAll);
+  } else {
+    bootAll();
+  }
+  window.addEventListener('load', bootAll);
+</script>
+
+</body>
+</html>
