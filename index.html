@@ -120,13 +120,27 @@
   <nav id="site-nav"
        class="mx-auto flex max-w-6xl items-center justify-between rounded-full pl-5 pr-3 py-3 sm:px-6 sm:py-4">
 
-    <a href="#top"
-       class="relative flex items-center shrink-0 h-12 w-40 sm:h-16 sm:w-56 md:h-[4.5rem] md:w-64 lg:w-72">
-      <img src="/images/fortunatelogo.png" alt="Fortunate Interio"
-           class="logo-dark absolute inset-0 h-full w-full object-contain object-left opacity-0" />
-      <img src="/images/fortunatelogo.png" alt=""
-           class="logo-white absolute inset-0 h-full w-full object-contain object-left"
-           style="filter: brightness(0) invert(1);" />
+    <!-- LOGO + BRAND TEXT -->
+    <a href="#top" class="relative flex items-center shrink-0 h-12 sm:h-16 md:h-[4.5rem]">
+
+      <!-- Logo image -->
+      <div class="relative h-full w-14 sm:w-20 md:w-24 shrink-0">
+        <img src="/images/fortunatelogo.png" alt="Fortunate Interio"
+             class="logo-dark absolute inset-0 h-full w-full object-contain object-left" />
+        <img src="/images/fortunatelogo.png" alt=""
+             class="logo-white absolute inset-0 h-full w-full object-contain object-left"
+             style="filter: brightness(0) invert(1);" />
+      </div>
+
+      <!-- Brand text + tagline -->
+      <div class="ml-2 sm:ml-3 md:ml-4 flex flex-col justify-center leading-none">
+        <span class="brand-name font-serif text-[0.85rem] sm:text-[1.05rem] md:text-[1.2rem] font-medium tracking-[0.12em] whitespace-nowrap">
+          FORTUNATE INTERIO
+        </span>
+        <span class="brand-tagline mt-1 text-[0.5rem] sm:text-[0.6rem] md:text-[0.65rem] font-light tracking-[0.22em] uppercase whitespace-nowrap">
+          Elevate your space, Elevate your life
+        </span>
+      </div>
     </a>
 
     <div class="hidden items-center gap-5 lg:gap-7 text-sm font-medium md:flex">
@@ -183,6 +197,49 @@
     </div>
   </div>
 </header>
+
+<style>
+  /* ===== BRAND NAME FONT ===== */
+  .brand-name {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  /* ===== BRAND TEXT — AT TOP (transparent nav) ===== */
+  /* WHITE, highlighted with subtle text-shadow for legibility */
+  #site-nav .brand-name {
+    color: #ffffff;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  #site-nav .brand-tagline {
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  /* ===== BRAND TEXT — WHEN SCROLLED (solid nav) ===== */
+  /* FOREST GREEN — same as button's bg — highlighted */
+  #site-nav.scrolled .brand-name {
+    color: #0F2A24;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+  #site-nav.scrolled .brand-tagline {
+    color: rgba(15, 42, 36, 0.8);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+
+  /* ===== LOGO IMAGE SWAP ===== */
+  #site-nav .logo-white {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  #site-nav .logo-dark {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  #site-nav.scrolled .logo-white { opacity: 0; }
+  #site-nav.scrolled .logo-dark  { opacity: 1; }
+</style>
 
 <script>
   (function () {
@@ -435,6 +492,19 @@
       white-space: nowrap;
     }
 
+    /* ===== HIGHLIGHTED LOCATION (Mumbai Jogeshwari) ===== */
+    .hero-slider .info-value-highlight {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+      white-space: nowrap;
+      border-bottom: 1px solid rgba(201, 154, 118, 0.85);
+      padding-bottom: 3px;
+    }
+
     .hero-slider .scroll-indicator {
       display: flex;
       align-items: center;
@@ -508,6 +578,7 @@
       .hero-slider .hero-right-wrap { gap: 24px; }
       .hero-slider .hero-info-table td { padding: 8px 0 8px 16px; }
       .hero-slider .info-value { font-size: 1.1rem; }
+      .hero-slider .info-value-highlight { font-size: 1.1rem; }
       .hero-slider .info-label { font-size: 0.6rem; letter-spacing: 0.24em; }
     }
 
@@ -540,6 +611,11 @@
       .hero-slider .hero-info-table tbody { display: flex; gap: 16px; }
       .hero-slider .hero-info-table tr { display: flex; flex-direction: column; }
       .hero-slider .info-value { font-size: 0.9rem; text-align: left; }
+      .hero-slider .info-value-highlight {
+        font-size: 0.9rem;
+        text-align: left;
+        padding-bottom: 2px;
+      }
       .hero-slider .info-label { font-size: 0.5rem; letter-spacing: 0.18em; text-align: left; }
       .hero-slider .scroll-indicator { display: none; }
       .hero-slider .hero-dots { bottom: 16px; }
@@ -565,7 +641,7 @@
     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=85" alt="Luxury kitchen with warm textures" />
     <div class="hero-slide-content">
       <div class="slide-inner">
-        <span class="hero-slide-label">Rishi Home Interior</span>
+        <span class="hero-slide-label">Fortunate Interior</span>
         <h1>Spaces that feel<br>like <em>home.</em></h1>
         <p>Thoughtfully designed interiors that balance beauty, functionality and the way you live.</p>
         <div class="hero-actions">
@@ -611,7 +687,7 @@
       <tbody>
         <tr>
           <td class="info-label">Based In</td>
-          <td class="info-value">Delhi NCR</td>
+          <td class="info-value-highlight">Mumbai Jogeshwari</td>
         </tr>
         <tr>
           <td class="info-label">Spaces Designed</td>

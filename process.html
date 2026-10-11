@@ -206,11 +206,25 @@
   <nav id="site-nav"
        class="mx-auto flex max-w-6xl items-center justify-between rounded-full pl-6 pr-3 py-3 sm:px-6 sm:py-4">
 
-    <!-- LOGO -->
-    <a href="index.html" class="relative flex items-center shrink-0 h-12 w-40 sm:h-16 sm:w-56 md:h-[4.5rem] md:w-64 lg:w-72">
-      <img src="/images/fortunatelogo.png"
-           alt="Fortunate Interio — Interior Designers in Mumbai"
-           class="absolute inset-0 h-full w-full object-contain object-left" />
+    <!-- LOGO + BRAND TEXT -->
+    <a href="index.html" class="relative flex items-center shrink-0 h-12 sm:h-16 md:h-[4.5rem]">
+
+      <!-- Logo image -->
+      <div class="relative h-full w-14 sm:w-20 md:w-24 shrink-0">
+        <img src="/images/fortunatelogo.png"
+             alt="Fortunate Interio — Interior Designers in Mumbai"
+             class="absolute inset-0 h-full w-full object-contain object-left" />
+      </div>
+
+      <!-- Brand text + tagline -->
+      <div class="ml-2 sm:ml-3 md:ml-4 flex flex-col justify-center leading-none">
+        <span class="brand-name font-serif text-[0.85rem] sm:text-[1.05rem] md:text-[1.2rem] font-medium tracking-[0.12em] whitespace-nowrap">
+          FORTUNATE INTERIO
+        </span>
+        <span class="brand-tagline mt-1 text-[0.5rem] sm:text-[0.6rem] md:text-[0.65rem] font-light tracking-[0.22em] uppercase whitespace-nowrap">
+          Elevate your space, Elevate your life
+        </span>
+      </div>
     </a>
 
     <!-- DESKTOP NAVIGATION -->
@@ -254,6 +268,25 @@
     </div>
   </div>
 </header>
+
+<style>
+  /* ===== BRAND NAME FONT ===== */
+  .brand-name {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  /* ===== BRAND TEXT — FOREST (same as button) ===== */
+  #site-nav .brand-name {
+    color: #0F2A24;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  #site-nav .brand-tagline {
+    color: rgba(15, 42, 36, 0.75);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+</style>
 
 <script>
   (function () {
