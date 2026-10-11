@@ -284,8 +284,8 @@
              class="absolute inset-0 h-full w-full object-contain object-left" />
       </div>
 
-      <!-- Brand text + tagline -->
-      <div class="ml-1.5 sm:ml-3 md:ml-4 flex flex-col justify-center leading-none min-w-0">
+      <!-- Brand text + tagline (STRONG HIGHLIGHT) -->
+      <div class="brand-highlight ml-1.5 sm:ml-3 md:ml-4 flex flex-col justify-center leading-none min-w-0">
         <span class="brand-name font-serif text-[0.7rem] sm:text-[1.05rem] md:text-[1.2rem] font-medium tracking-[0.06em] sm:tracking-[0.12em] whitespace-nowrap">
           FORTUNATE INTERIO
         </span>
@@ -343,20 +343,38 @@
     font-family: 'Playfair Display', Georgia, serif;
   }
 
-  /* ===== BRAND TEXT — FOREST (same as button) ===== */
+  /* ===== STRONG HIGHLIGHT BACKDROP ===== */
+  #site-nav .brand-highlight {
+    padding: 8px 16px 8px 14px;
+    border-radius: 16px;
+    background-color: #0F2A24;                        /* solid forest */
+    border: 1px solid rgba(201, 154, 118, 0.55);      /* terracotta border */
+    box-shadow:
+      0 4px 20px rgba(15, 42, 36, 0.35),
+      0 0 0 3px rgba(201, 154, 118, 0.12);            /* soft terracotta outer ring */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+  }
+
+  /* ===== BRAND TEXT — WHITE ON FOREST PILL ===== */
   #site-nav .brand-name {
-    color: #0F2A24;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
     transition: color 0.3s ease, text-shadow 0.3s ease;
   }
   #site-nav .brand-tagline {
-    color: rgba(15, 42, 36, 0.75);
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     transition: color 0.3s ease, text-shadow 0.3s ease;
   }
 
   /* ===== ULTRA-NARROW PHONES (≤ 360px) ===== */
   @media (max-width: 360px) {
+    #site-nav .brand-highlight {
+      padding: 5px 10px 5px 9px;
+      border-radius: 12px;
+    }
     #site-nav .brand-name {
       font-size: 0.62rem;
       letter-spacing: 0.03em;

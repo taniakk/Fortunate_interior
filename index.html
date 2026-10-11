@@ -132,8 +132,8 @@
              style="filter: brightness(0) invert(1);" />
       </div>
 
-      <!-- Brand text + tagline -->
-      <div class="ml-1.5 sm:ml-3 md:ml-4 flex flex-col justify-center leading-none min-w-0">
+      <!-- Brand text + tagline (STRONG HIGHLIGHT) -->
+      <div class="brand-highlight ml-1.5 sm:ml-3 md:ml-4 flex flex-col justify-center leading-none min-w-0">
         <span class="brand-name font-serif text-[0.7rem] xs:text-[0.8rem] sm:text-[1.05rem] md:text-[1.2rem] font-medium tracking-[0.06em] sm:tracking-[0.12em] whitespace-nowrap">
           FORTUNATE INTERIO
         </span>
@@ -199,7 +199,7 @@
 </header>
 
 <style>
-  /* ===== CUSTOM XS BREAKPOINT (for very small phones) ===== */
+  /* ===== CUSTOM XS BREAKPOINT ===== */
   @media (min-width: 380px) {
     .xs\:block { display: block !important; }
     .xs\:text-\[0\.8rem\] { font-size: 0.8rem !important; }
@@ -210,26 +210,39 @@
     font-family: 'Playfair Display', Georgia, serif;
   }
 
-  /* ===== BRAND TEXT — AT TOP (transparent nav) ===== */
+  /* ===== STRONG HIGHLIGHT BACKDROP ===== */
+  #site-nav .brand-highlight {
+    padding: 8px 16px 8px 14px;
+    border-radius: 16px;
+    background-color: #0F2A24;                        /* solid forest */
+    border: 1px solid rgba(201, 154, 118, 0.55);      /* terracotta border */
+    box-shadow:
+      0 4px 20px rgba(15, 42, 36, 0.35),
+      0 0 0 3px rgba(201, 154, 118, 0.12);            /* soft terracotta outer ring */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+  }
+
+  /* Scrolled state — even stronger contrast on solid nav */
+  #site-nav.scrolled .brand-highlight {
+    background-color: #0F2A24;
+    border-color: #c99a76;
+    box-shadow:
+      0 6px 24px rgba(15, 42, 36, 0.45),
+      0 0 0 3px rgba(201, 154, 118, 0.25);
+  }
+
+  /* ===== BRAND TEXT — ALWAYS WHITE ON FOREST PILL ===== */
   #site-nav .brand-name {
     color: #ffffff;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
     transition: color 0.3s ease, text-shadow 0.3s ease;
   }
   #site-nav .brand-tagline {
     color: rgba(255, 255, 255, 0.85);
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     transition: color 0.3s ease, text-shadow 0.3s ease;
-  }
-
-  /* ===== BRAND TEXT — WHEN SCROLLED (solid nav) ===== */
-  #site-nav.scrolled .brand-name {
-    color: #0F2A24;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  }
-  #site-nav.scrolled .brand-tagline {
-    color: rgba(15, 42, 36, 0.8);
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   }
 
   /* ===== LOGO IMAGE SWAP ===== */
@@ -244,8 +257,12 @@
   #site-nav.scrolled .logo-white { opacity: 0; }
   #site-nav.scrolled .logo-dark  { opacity: 1; }
 
-  /* ===== PREVENT OVERFLOW ON NARROW SCREENS ===== */
+  /* ===== RESPONSIVE TUNING ===== */
   @media (max-width: 380px) {
+    #site-nav .brand-highlight {
+      padding: 5px 10px 5px 9px;
+      border-radius: 12px;
+    }
     #site-nav .brand-name {
       font-size: 0.65rem;
       letter-spacing: 0.04em;
