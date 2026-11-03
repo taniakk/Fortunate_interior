@@ -125,9 +125,15 @@
 
       <!-- Logo image -->
       <div class="relative h-full w-10 sm:w-20 md:w-24 shrink-0">
-        <img src="/images/fortunatelogo.png" alt="Fortunate Interio"
+        <!-- ORIGINAL IMAGEKIT LOGO (shown when scrolled) -->
+        <img src="https://ik.imagekit.io/iuiy6mihw/fortunate_interio/Fortunate%20Interio%20Logo%20on%20Transparent%20Background.png"
+             alt="Fortunate Interio"
+             loading="lazy"
              class="logo-dark absolute inset-0 h-full w-full object-contain object-left" />
-        <img src="/images/fortunatelogo.png" alt=""
+        <!-- INVERTED WHITE VERSION (shown at top over dark hero) -->
+        <img src="https://ik.imagekit.io/iuiy6mihw/fortunate_interio/Fortunate%20Interio%20Logo%20on%20Transparent%20Background.png"
+             alt=""
+             loading="lazy"
              class="logo-white absolute inset-0 h-full w-full object-contain object-left"
              style="filter: brightness(0) invert(1);" />
       </div>
@@ -210,21 +216,39 @@
     font-family: 'Playfair Display', Georgia, serif;
   }
 
-  /* ===== STRONG HIGHLIGHT BACKDROP ===== */
+  /* ============================================================
+     NAV — DEFAULT (TOP OF PAGE)
+     Transparent over hero.
+     ============================================================ */
+  #site-nav {
+    background-color: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* ============================================================
+     NAV — SCROLLED STATE
+     LIGHT cream pill so the ORIGINAL (dark) ImageKit logo shows.
+     ============================================================ */
+  #site-nav.scrolled {
+    background-color: #FAF7F2;                       /* cream */
+    box-shadow: 0 4px 24px rgba(15, 42, 36, 0.10);
+    border: 1px solid rgba(201, 154, 118, 0.25);
+  }
+
+  /* ===== STRONG HIGHLIGHT BACKDROP (brand pill) ===== */
   #site-nav .brand-highlight {
     padding: 8px 16px 8px 14px;
     border-radius: 16px;
-    background-color: #0F2A24;                        /* solid forest */
-    border: 1px solid rgba(201, 154, 118, 0.55);      /* terracotta border */
+    background-color: #0F2A24;
+    border: 1px solid rgba(201, 154, 118, 0.55);
     box-shadow:
       0 4px 20px rgba(15, 42, 36, 0.35),
-      0 0 0 3px rgba(201, 154, 118, 0.12);            /* soft terracotta outer ring */
+      0 0 0 3px rgba(201, 154, 118, 0.12);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     transition: all 0.3s ease;
   }
 
-  /* Scrolled state — even stronger contrast on solid nav */
   #site-nav.scrolled .brand-highlight {
     background-color: #0F2A24;
     border-color: #c99a76;
@@ -245,7 +269,11 @@
     transition: color 0.3s ease, text-shadow 0.3s ease;
   }
 
-  /* ===== LOGO IMAGE SWAP ===== */
+  /* ============================================================
+     LOGO SWAP
+     Top  → white (inverted) logo over hero.
+     Scroll → ORIGINAL ImageKit logo on cream nav.
+     ============================================================ */
   #site-nav .logo-white {
     opacity: 1;
     transition: opacity 0.3s ease;
@@ -254,8 +282,40 @@
     opacity: 0;
     transition: opacity 0.3s ease;
   }
+
   #site-nav.scrolled .logo-white { opacity: 0; }
   #site-nav.scrolled .logo-dark  { opacity: 1; }
+
+  /* ===== NAV LINKS ===== */
+  #site-nav .nav-link {
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+  #site-nav.scrolled .nav-link {
+    color: #0F2A24; /* dark forest on cream nav */
+  }
+  #site-nav .nav-link:hover,
+  #site-nav.scrolled .nav-link:hover {
+    color: #c99a76; /* terracotta hover */
+  }
+
+  /* ===== CTA BUTTON ===== */
+  #site-nav .nav-cta {
+    background-color: #c99a76;
+    color: #0F2A24;
+  }
+  #site-nav .nav-cta:hover {
+    background-color: #0F2A24;
+    color: #FAF7F2;
+  }
+
+  /* ===== BURGER ICON ===== */
+  #site-nav .burger-icon {
+    color: #ffffff;
+  }
+  #site-nav.scrolled .burger-icon {
+    color: #0F2A24;
+  }
 
   /* ===== RESPONSIVE TUNING ===== */
   @media (max-width: 380px) {
@@ -282,7 +342,8 @@
       isOpen = true;
       menu.classList.remove('max-h-0', 'opacity-0', 'invisible');
       menu.classList.add('max-h-[600px]', 'opacity-100', 'visible');
-      iconOpen.classList.add('hidden'); iconClose.classList.remove('hidden');
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
       btn.setAttribute('aria-expanded', 'true');
     }
 
@@ -290,7 +351,8 @@
       isOpen = false;
       menu.classList.add('max-h-0', 'opacity-0', 'invisible');
       menu.classList.remove('max-h-[600px]', 'opacity-100', 'visible');
-      iconOpen.classList.remove('hidden'); iconClose.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
       btn.setAttribute('aria-expanded', 'false');
     }
 
@@ -634,31 +696,56 @@
         padding: 14px 20px;
       }
       .hero-slider .hero-right-wrap {
+        left: 5vw;
         right: 5vw;
         top: auto;
-        bottom: 50px;
+        bottom: 54px;
         transform: none;
         gap: 10px;
-        align-items: flex-start;
+        align-items: center;
       }
-      .hero-slider .hero-info-table td { padding: 4px 12px 4px 0; text-align: left; }
-      .hero-slider .hero-info-table { display: flex; }
-      .hero-slider .hero-info-table tbody { display: flex; gap: 16px; }
-      .hero-slider .hero-info-table tr { display: flex; flex-direction: column; }
-      .hero-slider .info-value { font-size: 0.9rem; text-align: left; }
+      .hero-slider .hero-info-table { display: flex; width: 100%; }
+      .hero-slider .hero-info-table tbody {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 4px;
+      }
+      .hero-slider .hero-info-table tr {
+        display: flex;
+        flex: 1;
+        min-width: 0;
+        flex-direction: column;
+      }
+      .hero-slider .hero-info-table td {
+        padding: 4px 2px;
+        text-align: center;
+      }
+      .hero-slider .info-value {
+        font-size: 0.9rem;
+        text-align: center;
+        white-space: normal;
+      }
       .hero-slider .info-value-highlight {
         font-size: 0.9rem;
-        text-align: left;
+        text-align: center;
         padding-bottom: 2px;
+        white-space: normal;
       }
-      .hero-slider .info-label { font-size: 0.5rem; letter-spacing: 0.18em; text-align: left; }
+      .hero-slider .info-label {
+        font-size: 0.5rem;
+        letter-spacing: 0.12em;
+        text-align: center;
+        white-space: normal;
+      }
       .hero-slider .scroll-indicator { display: none; }
       .hero-slider .hero-dots { bottom: 16px; }
     }
 
     @media (max-width: 480px) {
-      .hero-slider .hero-right-wrap { bottom: 48px; }
-      .hero-slider .hero-info-table tbody { gap: 12px; }
+      .hero-slider .hero-right-wrap { bottom: 52px; }
+      .hero-slider .info-value,
+      .hero-slider .info-value-highlight { font-size: 0.8rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
