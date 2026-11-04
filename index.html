@@ -1305,22 +1305,35 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         <p class="pt-1 text-xs sm:text-sm text-sage/80">Office hours: Monday to Saturday, 9:00 am to 7:00 pm</p>
       </address>
     </div>
+<div class="rounded-[1.5rem] sm:rounded-[2rem] bg-cream p-5 sm:p-8 md:p-10">
+  <form class="WhatsappBookingForm">
 
-    <div class="rounded-[1.5rem] sm:rounded-[2rem] bg-cream p-5 sm:p-8 md:p-10">
-      <label class="block text-sm font-semibold text-forest mb-1.5" for="n">Name</label>
-      <input id="n" class="mb-4 sm:mb-5 w-full rounded-xl border border-sand bg-white px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition" placeholder="Your name">
+    <label class="block text-sm font-semibold text-forest mb-1.5" for="n">Name</label>
+    <input id="n" name="name" type="text"
+      class="mb-4 sm:mb-5 w-full rounded-xl border border-sand bg-white px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition"
+      placeholder="Your name">
 
-      <label class="block text-sm font-semibold text-forest mb-1.5" for="e">Email</label>
-      <input id="e" type="email" class="mb-4 sm:mb-5 w-full rounded-xl border border-sand bg-white px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition" placeholder="you@example.com">
+    <label class="block text-sm font-semibold text-forest mb-1.5" for="e">Email</label>
+    <input id="e" name="email" type="email"
+      class="mb-4 sm:mb-5 w-full rounded-xl border border-sand bg-white px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition"
+      placeholder="you@example.com">
 
-      <label class="block text-sm font-semibold text-forest mb-1.5" for="m">About Your Space</label>
-      <textarea id="m" rows="4" class="mb-5 sm:mb-6 w-full rounded-xl border border-sand bg-white px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition" placeholder="Tell us what you have in mind"></textarea>
+    <label class="block text-sm font-semibold text-forest mb-1.5" for="m">About Your Space</label>
+    <textarea id="m" name="message" rows="4"
+      class="mb-5 sm:mb-6 w-full rounded-xl border border-sand bg-white px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition"
+      placeholder="Tell us what you have in mind"></textarea>
 
-      <button id="send" type="button" class="w-full rounded-full bg-forest py-3.5 sm:py-4 font-semibold text-white btn-lift hover:bg-terracotta text-sm sm:text-base">
-        Send Message
-      </button>
-      <p id="ok" class="mt-4 hidden text-center text-sm font-semibold text-terracotta" role="status">Thanks! We'll be in touch soon.</p>
-    </div>
+    <button id="send" type="button"
+      class="w-full rounded-full bg-forest py-3.5 sm:py-4 font-semibold text-white btn-lift hover:bg-terracotta text-sm sm:text-base">
+      Send Message
+    </button>
+
+    <p id="ok" class="mt-4 hidden text-center text-sm font-semibold text-terracotta" role="status">
+      Thanks! We'll be in touch soon.
+    </p>
+
+  </form>
+</div>
   </div>
 </section>
 </main>
