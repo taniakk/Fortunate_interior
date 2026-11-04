@@ -503,33 +503,36 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       </div>
 
       <div class="rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] bg-cream p-5 sm:p-8 md:p-10">
-        <form id="contactForm" novalidate>
-          <label class="block text-sm font-semibold text-forest mb-1.5" for="name">Name</label>
-          <input id="name" type="text" required
-                 class="mb-4 w-full rounded-xl border border-sand bg-white px-4 py-3 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition"
-                 placeholder="Your name">
+      <form id="WhatsappBookingForm" novalidate>
+    <label class="block text-sm font-semibold text-forest mb-1.5" for="name">Name</label>
+    <input id="name" name="name" type="text" required
+           class="mb-4 w-full rounded-xl border border-sand bg-white px-4 py-3 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition"
+           placeholder="Your name">
 
-          <label class="block text-sm font-semibold text-forest mb-1.5" for="email">Email</label>
-          <input id="email" type="email" required
-                 class="mb-4 w-full rounded-xl border border-sand bg-white px-4 py-3 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition"
-                 placeholder="you@example.com">
+    <label class="block text-sm font-semibold text-forest mb-1.5" for="email">Email</label>
+    <input id="email" name="email" type="email" required
+           class="mb-4 w-full rounded-xl border border-sand bg-white px-4 py-3 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition"
+           placeholder="you@example.com">
 
-          <label class="block text-sm font-semibold text-forest mb-1.5" for="phone">Phone <span class="text-forest/40 font-normal">(optional)</span></label>
-          <input id="phone" type="tel"
-                 class="mb-4 w-full rounded-xl border border-sand bg-white px-4 py-3 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition"
-                 placeholder="+91 XXXXX XXXXX">
+    <label class="block text-sm font-semibold text-forest mb-1.5" for="phone">
+        Phone <span class="text-forest/40 font-normal">(optional)</span>
+    </label>
+    <input id="phone" name="phone" type="tel"
+           class="mb-4 w-full rounded-xl border border-sand bg-white px-4 py-3 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition"
+           placeholder="+91 XXXXX XXXXX">
 
-          <label class="block text-sm font-semibold text-forest mb-1.5" for="message">About Your Space</label>
-          <textarea id="message" rows="4" required
-                    class="mb-5 w-full rounded-xl border border-sand bg-white px-4 py-3 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition"
-                    placeholder="Tell us about the rooms, the size, and what you're hoping for."></textarea>
+    <label class="block text-sm font-semibold text-forest mb-1.5" for="message">About Your Space</label>
+    <textarea id="message" name="message" rows="4" required
+              class="mb-5 w-full rounded-xl border border-sand bg-white px-4 py-3 text-sm sm:text-base text-forest placeholder:text-forest/40 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 transition"
+              placeholder="Tell us about the rooms, the size, and what you're hoping for."></textarea>
 
-          <button type="submit"
-                  class="w-full rounded-full bg-forest py-3.5 sm:py-4 font-semibold text-white btn-lift hover:bg-terracotta text-sm sm:text-base">
-            Send Message
-          </button>
-          <p id="formStatus" class="mt-4 hidden text-center text-sm font-semibold text-terracotta" role="status"></p>
-        </form>
+    <button type="submit"
+            class="w-full rounded-full bg-forest py-3.5 sm:py-4 font-semibold text-white btn-lift hover:bg-terracotta text-sm sm:text-base">
+        Send Message
+    </button>
+
+    <p id="formStatus" class="mt-4 hidden text-center text-sm font-semibold text-terracotta" role="status"></p>
+</form>
       </div>
 
     </div>
